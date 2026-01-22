@@ -195,3 +195,75 @@ a.back:hover {
   color: #A79457;
   padding-left: 8px;
 }
+
+.cart-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  
+  background-color: #a68d4d;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cart-button:hover {
+  background-color: #8e773f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.cart-button .icon {
+  font-size: 20px;
+}
+
+.ZumEinkaufswagenHinzufügen {
+  display: flex !important; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 20px;
+  min-width: 220px;
+  gap: 12px;
+  
+  background-color: #a68d4d; 
+  color: #ffffff;
+  
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: sans-serif;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.ZumEinkaufswagenHinzufügen .icon {
+  font-size: 32px;
+  display: block;
+}
+
+.ZumEinkaufswagenHinzufügen .text {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+}
+
+.ZumEinkaufswagenHinzufügen .price-display {
+  font-size: 18px;
+  background: rgba(0,0,0,0.1);
+  padding: 4px 12px;
+  border-radius: 5px;
+  display: block;
+}
+
+.ZumEinkaufswagenHinzufügen:hover {
+  background-color: #8e773f;
+  transform: scale(1.02);
+}

@@ -1,30 +1,27 @@
-const cartButton = document.getElementById('cartButton');
 const cartCountElement = document.getElementById('cart-count');
 
+const cartButtons = document.querySelectorAll('#cartButton, .cart-btn');
+
 function updateCartDisplay() {
-  const cart = JSON.parse(localStorage.getItem('guitarCart')) || [];
-  cartCountElement.innerText = cart.length;
+    const cart = JSON.parse(localStorage.getItem('guitarCart')) || [];
+    if (cartCountElement) {
+        cartCountElement.innerText = cart.length;
+    }
 }
 
-function removeFromCart(index) {
-  let cart = JSON.parse(localStorage.getItem('guitarCart')) || [];
-  
-  cart.splice(index, 1); 
-  
-  localStorage.setItem('guitarCart', JSON.stringify(cart));
-  updateCartDisplay();
-}
+cartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const product = {
+            name: button.getAttribute('data-name') || 'Gitarre',
+            price: button.getAttribute('data-price') || '0'
+        };
 
-cartButton.addEventListener('click', () => {
-  const product = {
-    name: cartButton.getAttribute('data-name'),
-    price: cartButton.getAttribute('data-price')
-  };
+        let cart = JSON.parse(localStorage.getItem('guitarCart')) || [];
+        cart.push(product);
+        localStorage.setItem('guitarCart', JSON.stringify(cart));
 
-  let cart = JSON.parse(localStorage.getItem('guitarCart')) || [];
-  cart.push(product);
-  localStorage.setItem('guitarCart', JSON.stringify(cart));
-
-  updateCartDisplay();
+        updateCartDisplay();
+    });
 });
+
 updateCartDisplay();
