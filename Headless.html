@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Headless – Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .content {
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+      .guitar-image {
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+        margin-bottom: 20px;
+      }
+      a.back {
+        font-weight: bold;
+        color: #333;
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button 
+      class="ZumEinkaufswagenHinzufügen" 
+      id="cartButton"
+      data-name="Headless" 
+      data-price="1500">
+      🛒
+    </button>
+    <nav class="top-nav">
+      <a href="start.html">⬅ Zurück zum Start      </a>
+      <a href="egitarrengalerie.html">⬅ Zurück zur E-Gitarren Galerie</a>
+      <a href="warenkorb.html">⬅ Einkaufswagen (<span id="cart-count">0</span>)</a>
+    </nav>
+
+    <h1>Headless</h1>
+
+    <div class="content">
+      <img
+        class="guitar-image"
+        src="https://cdn.long-mcquade.com/files/242206/lg_1_1_758182.webp"
+        alt="Headless Gitarre"
+      />
+
+      <h2>Beschreibung</h2>
+      <p>
+        Headless-Gitarren sind ultraleicht, modern und extrem ergonomisch –
+        perfekt für Prog und technische Spielweisen.
+      </p>
+
+      <h2>Eigenschaften</h2>
+      <ul>
+        <li>Kein traditioneller Kopf – kompakter</li>
+        <li>Sehr stabile Stimmmechanik am Steg</li>
+        <li>Oft moderne Pickups</li>
+      </ul>
+
+      <h2>Berühmte Spieler</h2>
+      <ul>
+        <li>Plini</li>
+        <li>Sarah Longfield</li>
+      </ul>
+
+      <h2>Zum Hersteller</h2>
+      <ul>
+        <p>
+          <a
+            href="https://strandbergguitars.com/en-WW/product/boden-original-nx-6-charcoal-black"
+            class="Hersteller"
+            >Strandberg</a
+          >
+        </p>
+      </ul>
+
+      <a href="egitarrengalerie.html" class="back">← Zurück</a>
+    </div>
+  </body>
+  <script src="script.js">
+    </script>
+</html>

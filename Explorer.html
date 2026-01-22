@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explorer – Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .content {
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+      .guitar-image {
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+        margin-bottom: 20px;
+      }
+      a.back {
+        display: inline-block;
+        margin-top: 20px;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button 
+      class="ZumEinkaufswagenHinzufügen" 
+      id="cartButton"
+      data-name="Explorer" 
+      data-price="1200">
+      🛒
+    </button>
+    <nav class="top-nav">
+      <a href="start.html">⬅ Zurück zum Start      </a>
+      <a href="egitarrengalerie.html">⬅ Zurück zur E-Gitarren Galerie</a>
+      <a href="warenkorb.html">⬅ Einkaufswagen (<span id="cart-count">0</span>)</a>
+    </nav>
+
+    <h1>Explorer</h1>
+
+    <div class="content">
+      <img
+        class="guitar-image"
+        src="https://guitarsforidiots.com/wp-content/uploads/2021/06/explorer.jpeg?w=1024"
+        alt="Explorer"
+      />
+
+      <h2>Beschreibung</h2>
+      <p>
+        Die Explorer ist bekannt für ihre aggressive Form und ihren druckvollen
+        Sound, perfekt für Rock und Metal.
+      </p>
+
+      <h2>Eigenschaften</h2>
+      <ul>
+        <li>Zwei Humbucker</li>
+        <li>Korpus aus Mahagoni</li>
+        <li>Sehr durchsetzungsstarker Klang</li>
+      </ul>
+
+      <h2>Berühmte Spieler</h2>
+      <ul>
+        <li>James Hetfield</li>
+        <li>The Edge</li>
+      </ul>
+
+      <h2>Zum Hersteller</h2>
+      <ul>
+        <p>
+          <a
+            href="https://www.gibson.com/de-eu/products/gibson-explorer-80s-british-racing-green"
+            class="Hersteller"
+            >Gibson</a
+          >
+        </p>
+      </ul>
+
+      <a href="egitarrengalerie.html" class="back">← Zurück</a>
+    </div>
+  </body>
+  <script src="script.js">
+    </script>
+</html>

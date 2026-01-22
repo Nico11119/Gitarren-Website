@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Westerngitarre – Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .content {
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+      .guitar-image {
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+        margin-bottom: 20px;
+      }
+      a.back {
+        margin-top: 20px;
+        display: inline-block;
+        color: #333;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      a.back:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <button 
+      class="ZumEinkaufswagenHinzufügen" 
+      id="cartButton"
+      data-name="Western-Gitarre" 
+      data-price="500">
+      🛒
+    </button>
+    <nav class="top-nav">
+      <a href="start.html">⬅ Zurück zum Start</a>
+      <a href="AkustischeGitarrenGalerie.html"
+        >⬅ Zurück zur Akustik Gitarren Galerie</a
+      >
+      <a href="warenkorb.html">⬅ Einkaufswagen (<span id="cart-count">0</span>)</a>
+    </nav>
+
+    <h1>Westerngitarre</h1>
+
+    <div class="content">
+      <img
+        class="guitar-image"
+        src="https://images.musicstore.de/images/0960/ibanez-vc44ce-opn_1_GIT0061142-000.jpg"
+        alt="Westerngitarre"
+      />
+
+      <h2>Beschreibung</h2>
+      <p>
+        Westerngitarren besitzen Stahlsaiten und haben einen helleren, lauteren
+        Klang. Sie werden viel in Pop, Country, Rock und Singer-Songwriter-Musik
+        verwendet.
+      </p>
+
+      <h2>Eigenschaften</h2>
+      <ul>
+        <li>Stahlsaiten</li>
+        <li>Schmalerer Hals als Klassikgitarren</li>
+        <li>Kräftiger, brillanter Sound</li>
+      </ul>
+
+      <h2>Berühmte Spieler</h2>
+      <ul>
+        <li>Ed Sheeran</li>
+        <li>Bob Dylan</li>
+        <li>James Taylor</li>
+      </ul>
+
+      <a href="AkustischeGitarrenGalerie.html" class="back" class="Hersteller"
+        >← Zurück</a
+      >
+    </div>
+  </body>
+  <script src="script.js">
+    </script>
+</html>

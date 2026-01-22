@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les Paul - Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .content {
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+      .guitar-image {
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+        margin-bottom: 20px;
+      }
+      a.back {
+        margin-top: 20px;
+        display: inline-block;
+        color: #333;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      a.back:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <button 
+      class="ZumEinkaufswagenHinzufügen" 
+      id="cartButton"
+      data-name="Les Paul" 
+      data-price="1800">
+      🛒
+    </button>
+    <nav class="top-nav">
+      <a href="start.html">⬅ Zurück zum Start      </a>
+      <a href="egitarrengalerie.html">⬅ Zurück zur E-Gitarren Galerie</a>
+      <a href="warenkorb.html">⬅ Einkaufswagen (<span id="cart-count">0</span>)</a>
+    </nav>
+
+    <h1>Les Paul</h1>
+
+    <div class="content">
+      <img
+        class="guitar-image"
+        src="https://www.klangfarbe.com/pictures/Shop/Artikel/G/1124778/Gibson-1958-Les-Paul-Standard-Reissue-Ultra-Light-Aged-washed-ch.sb-1.webp"
+        alt="Les Paul"
+      />
+
+      <h2>Beschreibung</h2>
+      <p>
+        Die Les Paul ist bekannt für ihren warmen, dicken Sound mit viel Sustain
+        – besonders beliebt im Rock und Metal.
+      </p>
+
+      <h2>Eigenschaften</h2>
+      <ul>
+        <li>2x Humbucker</li>
+        <li>Mahagonikorpus mit Ahorndecke</li>
+        <li>Kurze Mensur</li>
+      </ul>
+
+      <h2>Berühmte Spieler</h2>
+      <ul>
+        <li>Slash</li>
+        <li>Jimmy Page</li>
+        <li>Zakk Wylde</li>
+      </ul>
+
+      <h2>Zum Hersteller</h2>
+      <ul>
+        <p>
+          <a
+            href="https://www.gibson.com/de-eu/products/gibson-les-paul-standard-60s-plain-top-tobacco-burst-exclusive"
+            class="Hersteller"
+            >Gibson</a
+          >
+        </p>
+      </ul>
+
+      <a href="egitarrengalerie.html" class="back">← Zurück</a>
+    </div>
+  </body>
+  <script src="script.js">
+    </script>
+</html>

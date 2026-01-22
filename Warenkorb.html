@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dein Warenkorb</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        .cart-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+        .cart-item.removing {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        .remove-item-btn {
+            background: #f4f4f4;
+            color: #888;
+            border: 1px solid #ddd;
+            padding: 5px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 11px;
+            margin-left: 15px;
+            transition: all 0.2s;
+        }
+        .remove-item-btn:hover {
+            background: #ff4d4d;
+            color: white;
+            border-color: #ff4d4d;
+        }
+        .total-price {
+            font-family: 'Anton', sans-serif;
+            font-size: 24px;
+            margin-top: 20px;
+            text-align: right;
+            color: #A79457;
+        }
+        .empty-msg { padding: 20px; color: #777; }
+        .clear-btn {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="start.html">⬅ Zurück zum Start</a>
+    </nav>
+
+    <h1>Dein Warenkorb</h1>
+
+    <div class="cart-container">
+        <div id="cartList"></div>
+        
+        <div class="total-price">
+            Gesamtpreis: <span id="totalDisplay">0</span>€
+        </div>
+
+        <button class="clear-btn" onclick="clearCart()">Warenkorb leeren</button>
+    </div>
+
+    <script>
+        function displayCart() {
+            const cartList = document.getElementById('cartList');
+            const totalDisplay = document.getElementById('totalDisplay');
+            let cart = JSON.parse(localStorage.getItem('guitarCart')) || [];
+            
+            if (cart.length === 0) {
+                cartList.innerHTML = '<p class="empty-msg">Dein Warenkorb ist noch leer.</p>';
+                totalDisplay.innerText = '0';
+                return;
+            }
+
+            cartList.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.id = `item-${index}`;
+                div.innerHTML = `
+                    <div>
+                        <strong>${item.name}</strong>
+                        <button class="remove-item-btn" onclick="removeSingleItem(${index})">Löschen</button>
+                    </div>
+                    <span>${item.price}€</span>
+                `;
+                cartList.appendChild(div);
+                total += parseInt(item.price);
+            });
+
+            totalDisplay.innerText = total;
+        }
+
+        function removeSingleItem(index) {
+            const itemElement = document.getElementById(`item-${index}`);
+            itemElement.classList.add('removing');
+
+            setTimeout(() => {
+                let cart = JSON.parse(localStorage.getItem('guitarCart')) || [];
+                cart.splice(index, 1);
+                localStorage.setItem('guitarCart', JSON.stringify(cart));
+                displayCart();
+            }, 300);
+        }
+
+        function clearCart() {
+            if(confirm("Möchtest du wirklich den gesamten Warenkorb leeren?")) {
+                localStorage.removeItem('guitarCart');
+                displayCart();
+            }
+        }
+
+        displayCart();
+    </script>
+</body>
+</html>

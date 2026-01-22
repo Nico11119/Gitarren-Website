@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telecaster – Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .content {
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+      .guitar-image {
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+        margin-bottom: 20px;
+      }
+      a.back {
+        margin-top: 20px;
+        display: inline-block;
+        color: #333;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      a.back:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <button 
+      class="ZumEinkaufswagenHinzufügen" 
+      id="cartButton"
+      data-name="Telecaster" 
+      data-price="1100">
+      🛒
+    </button>
+    <nav class="top-nav">
+      <a href="start.html">⬅ Zurück zum Start      </a>
+      <a href="egitarrengalerie.html">⬅ Zurück zur E-Gitarren Galerie</a>
+      <a href="warenkorb.html">🛒 Einkaufswagen (<span id="cart-count">0</span>)</a>
+    </nav>
+
+    <h1>Telecaster</h1>
+
+    <div class="content">
+      <img
+        class="guitar-image"
+        src="https://www.fender.com/cdn-cgi/image/format=auto,resize=height=auto,width=1500/https://www.fmicassets.com/Damroot/eCommPNG/10104/0114962350_fen_ins_frt_1_rr.png"
+        alt="Telecaster"
+      />
+
+      <h2>Beschreibung</h2>
+      <p>
+        Die Telecaster ist bekannt für ihren twangigen, direkten Sound und wird
+        oft in Country, Rock und Indie eingesetzt.
+      </p>
+
+      <h2>Eigenschaften</h2>
+      <ul>
+        <li>2x Single-Coils</li>
+        <li>Klares, präzises Attack</li>
+        <li>Einfaches, klassisches Design</li>
+      </ul>
+
+      <h2>Berühmte Spieler</h2>
+      <ul>
+        <li>Brad Paisley</li>
+        <li>Keith Richards</li>
+        <li>Jim Root</li>
+      </ul>
+
+      <h2>Zum Hersteller</h2>
+      <ul>
+        <p>
+          <a
+            href="https://at.fender.com/products/american-professional-classic-telecaster?variant=51257876513055"
+            >Fender</a
+          >
+        </p>
+      </ul>
+
+      <a href="egitarrengalerie.html" class="back" class="Hersteller"
+        >← Zurück</a
+      >
+    </div>
+  </body>
+  <script src="script.js">
+</script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stratocaster – Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .content {
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+
+      .guitar-image {
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+        margin-bottom: 20px;
+      }
+
+      a.back {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+
+      a.back:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <button 
+      class="ZumEinkaufswagenHinzufügen" 
+      id="cartButton"
+      data-name="Stratocaster" 
+      data-price="900">
+      🛒
+    </button>
+
+    <nav class="top-nav">
+      <a href="start.html">⬅ Zurück zum Start      </a>
+      <a href="egitarrengalerie.html">⬅ Zurück zur E-Gitarren Galerie      </a>
+      <a href="warenkorb.html">⬅ Einkaufswagen (<span id="cart-count">0</span>)</a>
+    </nav>
+
+    <h1>Stratocaster</h1>
+
+    <div class="content">
+      <img
+        class="guitar-image"
+        src="https://www.fender.com/cdn-cgi/image/format=auto,resize=height=auto,width=1500/https://www.fmicassets.com/Damroot/eCommPNG/10078/0142922321_fen_ins_frt_1_rr.png"
+        alt="Stratocaster"
+      />
+
+      <h2>Beschreibung</h2>
+      <p>
+        Die Stratocaster ist eine der bekanntesten E-Gitarren der Welt. Sie
+        wurde 1954 vorgestellt und wird oft mit glockigen, klaren Sounds
+        verbunden. Sie ist extrem vielseitig und wird in Rock, Pop, Funk, Blues,
+        Indie und vielen anderen Genres eingesetzt.
+      </p>
+
+      <h2>Eigenschaften</h2>
+      <ul>
+        <li>Typ: Solid-Body</li>
+        <li>Tonabnehmer: Meist 3x Single-Coil</li>
+        <li>Brücke: Tremolo-System</li>
+        <li>Korpusform: Ergonomisch, mit “Belly Cut”</li>
+        <li>Hals: Ahorn oder Palisander Griffbrett</li>
+      </ul>
+
+      <h2>Berühmte Spieler</h2>
+      <ul>
+        <li>Jimi Hendrix</li>
+        <li>John Mayer</li>
+        <li>Eric Clapton</li>
+        <li>Mark Knopfler</li>
+      </ul>
+
+      <h2>Zum Hersteller</h2>
+      <ul>
+        <p>
+          <a
+            href="https://at.fender.com/products/limited-edition-player-ii-stratocaster-sonic-blue?variant=51413631205663"
+            class="Hersteller"
+            >Fender</a
+          >
+        </p>
+      </ul>
+
+      <a href="egitarrengalerie.html" class="back">← Zurück</a>
+    </div>
+
+    <script src="script.js">
+    </script>
+  </body>
+</html>
