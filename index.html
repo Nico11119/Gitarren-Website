@@ -92,7 +92,7 @@
     </div>
 
     <div class="Galerie">
-      <a href="egitarrengalerie.html" class="card">
+      <a href="egitarrengalerie.html" class="card1">
         <img
           src="https://images.pexels.com/photos/2016810/pexels-photo-2016810.jpeg"
           alt="E-Gitarre"
@@ -102,7 +102,7 @@
         </div>
       </a>
 
-      <a href="AkustischeGitarrenGalerie.html" class="card">
+      <a href="AkustischeGitarrenGalerie.html" class="card1">
         <img
           src="https://blog.openmusicschool.de/wp-content/uploads/2019/10/cropped-Die-20-besten-Akustik-Gitarren-Riffs.jpg"
           alt="Akustische Gitarre"
@@ -117,22 +117,17 @@
       const cartButton = document.getElementById('cartButton');
 
       cartButton.addEventListener('click', () => {
-        // Daten aus dem Button auslesen
         const product = {
           name: cartButton.getAttribute('data-name'),
           price: cartButton.getAttribute('data-price')
         };
 
-        // Warenkorb aus dem Speicher laden oder neu erstellen
         let cart = JSON.parse(localStorage.getItem('guitarCart')) || [];
 
-        // Produkt hinzufügen
         cart.push(product);
 
-        // In den Speicher geben
         localStorage.setItem('guitarCart', JSON.stringify(cart));
         
-        // Alert für den Benutzer
         alert(product.name + " wurde in den Warenkorb gelegt!");
         console.log("Aktueller Warenkorb:", cart);
       });
