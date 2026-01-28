@@ -4,11 +4,32 @@ body {
   text-align: center;
   color: #333;
   font-size: 110%;
-  background: linear-gradient(120deg, #e4d8c3, #ece3d9, #dcd6c0, #e8e0d8);
-  background-size: 400% 400%;
+  background: 
+    radial-gradient(rgba(167, 148, 87, 0.08) 1px, transparent 0),
+    linear-gradient(120deg, #e4d8c3, #ece3d9, #dcd6c0, #e8e0d8);
+  background-size: 40px 40px, 400% 400%;
   animation: gradientBG 15s ease infinite, fadeInPage 0.4s ease-out;
   overflow-x: hidden;
+  position: relative;
 }
+
+body::before, body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    transparent, 
+    rgba(167, 148, 87, 0.3) 15%, 
+    rgba(167, 148, 87, 0.3) 85%, 
+    transparent);
+  z-index: 1500;
+  pointer-events: none;
+}
+
+body::before { left: 30px; }
+body::after { right: 30px; }
 
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
@@ -40,7 +61,7 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.top-nav a {
+.top-nav a { 
   color: #fff;
   text-decoration: none !important;
   font-size: 15px;
@@ -63,14 +84,8 @@ body {
   transform: translateX(-50%);
 }
 
-.top-nav a:hover::after {
-  width: 100%;
-}
-
-.top-nav a:hover {
-  color: #A79457;
-  transform: translateY(-2px);
-}
+.top-nav a:hover::after { width: 100%; }
+.top-nav a:hover { color: #A79457; transform: translateY(-2px); }
 
 h1, h2, h3 {
   font-family: 'Anton', sans-serif;
@@ -84,7 +99,7 @@ h1 { font-size: 3rem; margin: 40px 0; text-shadow: 2px 2px 0px rgba(255,255,255,
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
-  padding: 40px 20px;
+  padding: 40px 60px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -94,7 +109,7 @@ h1 { font-size: 3rem; margin: 40px 0; text-shadow: 2px 2px 0px rgba(255,255,255,
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(0,0,0,0.05);
   position: relative;
 }
@@ -104,111 +119,81 @@ h1 { font-size: 3rem; margin: 40px 0; text-shadow: 2px 2px 0px rgba(255,255,255,
   position: absolute;
   top: 0; left: -100%;
   width: 50%; height: 100%;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent);
-  transition: 0.4s;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.6s;
   z-index: 1;
   pointer-events: none;
 }
 
-.card:hover::before {
-  left: 100%;
-  right: 100%;
-}
+.card:hover::before { left: 100%; }
 
 .card:hover {
-  transform: scale(1.03) translateY(-5px);
-  box-shadow: 0 12px 25px rgba(167, 148, 87, 0.25);
+  transform: scale(1.03) translateY(-10px);
+  box-shadow: 0 15px 30px rgba(167, 148, 87, 0.2);
   border-color: #A79457;
 }
-
-.card1 {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0,0,0,0.05);
-  position: relative;
-}
-
-.card1::before{
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 50%; height: 100%;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent);
-  transition: 0.4s;
-  z-index: 1;
-}
-.card1:hover::before {
-  left: 100%;
-  right: 100%;
-} 
-.card1:hover{
-  transform: scale(1.03) translateY(-5px);
-  box-shadow: 0 12px 25px rgba(167, 148, 87, 0.25);
-  border-color: #A79457;
-}
-.card1 img {
-  width: 100%;
-  height: 220px; 
-  object-fit: cover; 
-  padding: 0;        
-  display: block; 
-  transition: transform 0.3s ease-out;
-}
-
 
 .card img {
   width: 100%;
   height: 220px;
   object-fit: contain;
   padding: 15px;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.5s ease;
 }
 
-.card:hover img {
-  transform: scale(1.08);
+.card:hover img { transform: scale(1.1); }
+
+.card1 {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0,0,0,0.05);
+  position: relative;
 }
+
+.card1::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.6s;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card1:hover::before { left: 100%; }
+
+.card1:hover {
+  transform: scale(1.03) translateY(-10px);
+  box-shadow: 0 15px 30px rgba(167, 148, 87, 0.2);
+  border-color: #A79457;
+}
+
+.card1 img {
+  width: 100%;
+  height: 220px; 
+  object-fit: cover; 
+  padding: 0;
+  display: block; 
+  transition: transform 0.5s ease;
+}
+
+.card1:hover img { transform: scale(1.05); }
 
 .card-body {
   padding: 15px;
-  background: #eeeeee;
+  background: #fdfdfd;
   border-top: 1px solid #eee;
+  position: relative;
+  z-index: 3;
 }
 
-.ZumEinkaufswagenHinzufügen {
-  position: fixed;
-  top: 80px;
-  right: 25px;
-  z-index: 2000;
-  background: #A79457;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.ZumEinkaufswagenHinzufügen:hover {
-  transform: scale(1.1) rotate(10deg);
-  background: #1a1a1a;
-}
-
-.ZumEinkaufswagenHinzufügen:active {
-  transform: scale(0.9);
-}
-
-a{
+a {
   text-decoration: none;
-  color:#A79457
+  color: #A79457;
 }
 
 a.Hersteller {
@@ -224,16 +209,44 @@ a.Hersteller {
 a.Hersteller:hover {
   border-color: #A79457;
   border-radius: 5px;
+  background: rgba(167, 148, 87, 0.05);
 }
 
-a.back {
-  color: #333;
-  font-weight: 500;
+.ZumEinkaufswagenHinzufügen {
+  position: fixed;
+  top: 80px;
+  right: 60px;
+  z-index: 2000;
+  display: flex !important; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-width: 220px;
+  gap: 12px;
+  background-color: #a68d4d; 
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: sans-serif;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-a.back:hover {
-  color: #A79457;
-  padding-left: 8px;
+.ZumEinkaufswagenHinzufügen:hover {
+  background-color: #1a1a1a;
+  transform: scale(1.05) translateY(-5px);
+}
+
+.ZumEinkaufswagenHinzufügen .icon { font-size: 32px; display: block; }
+.ZumEinkaufswagenHinzufügen .text { font-size: 16px; font-weight: bold; display: block; }
+.ZumEinkaufswagenHinzufügen .price-display {
+  font-size: 18px;
+  background: rgba(0,0,0,0.1);
+  padding: 4px 12px;
+  border-radius: 5px;
+  display: block;
 }
 
 .cart-button {
@@ -241,7 +254,6 @@ a.back:hover {
   align-items: center;
   gap: 12px;
   padding: 12px 24px;
-  
   background-color: #a68d4d;
   color: white;
   border: none;
@@ -260,50 +272,25 @@ a.back:hover {
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-.cart-button .icon {
-  font-size: 20px;
-}
+.toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 3000; }
 
-.ZumEinkaufswagenHinzufügen {
-  display: flex !important; 
-  flex-direction: column;
+.toast {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 15px 25px;
+  border-left: 5px solid #A79457;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
   align-items: center;
-  justify-content: center;
-  
-  padding: 20px;
-  min-width: 220px;
   gap: 12px;
-  
-  background-color: #a68d4d; 
-  color: #ffffff;
-  
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-family: sans-serif;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: toastIn 0.5s ease forwards, toastOut 0.5s ease forwards 2.5s;
 }
 
-.ZumEinkaufswagenHinzufügen .icon {
-  font-size: 32px;
-  display: block;
-}
+@keyframes toastIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes toastOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
 
-.ZumEinkaufswagenHinzufügen .text {
-  font-size: 16px;
-  font-weight: bold;
-  display: block;
-}
+.bump { animation: bumpAnim 0.4s ease-out; }
+@keyframes bumpAnim { 0% { transform: scale(1.05); } 50% { transform: scale(1.2); } 100% { transform: scale(1.05); } }
 
-.ZumEinkaufswagenHinzufügen .price-display {
-  font-size: 18px;
-  background: rgba(0,0,0,0.1);
-  padding: 4px 12px;
-  border-radius: 5px;
-  display: block;
-}
-
-.ZumEinkaufswagenHinzufügen:hover {
-  background-color: #8e773f;
-  transform: scale(1.02);
-}
